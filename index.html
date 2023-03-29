@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>My Blog</title>
+    <style>
+        /* dark mode toggle  */
+
+
+        .dark-mode {
+            background-color: #333;
+            color: #f5f5f5;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Dark mode switch styles */
+
+        .dark-mode-switch {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 2rem;
+            margin-top: 1rem;
+        }
+
+        .toggle-input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .toggle-label {
+            position: relative;
+            display: inline-block;
+            width: 3rem;
+            height: 1.5rem;
+            background-color: #ccc;
+            border-radius: 1.5rem;
+            transition: background-color 1s;
+        }
+
+        .toggle-label::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+            transition: transform 1s;
+        }
+
+        .toggle-input:checked~.toggle-label {
+            background-color: #06D6A0;
+        }
+
+        .toggle-input:checked~.toggle-label::after {
+            transform: translateX(1.5rem);
+        }
+
+        /* Dark mode toggleable styles */
+        .dark-mode-toggleable {
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .dark-mode-button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+            margin-top: 1rem;
+            transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .dark-mode-button:hover {
+            background-color: #06D6A0;
+            color: #fff;
+            box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="dark-mode-switch">
+            <input type="checkbox" id="dark-mode-toggle" class="toggle-input">
+            <label for="dark-mode-toggle" class="toggle-label"></label>
+        </div>
+    </header>
+
+    <div class=" dark-mode-switch  py-26 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-l lg:mx-0">
+                <h2 class="text-4xl italic font-bold tracking-tight  sm:text-6xl hover:text-gray">Manpreet Kaur</h2>
+                <p class="mt-2 text-lg leading-8 ">Welcome to my blog.
+                </p>
+            </div>
+            <div class="flex flex-wrap ">
+                <div
+                    class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 border-t border-gray-200 pt-0 sm:mt-16 sm:pt-0 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+
+                    <article class="flex max-w-xl flex-col items-start ">
+                        <div class="flex items-center gap-x-4 text-xs">
+                        </div>
+                        <div class="group relative">
+                            <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                                <a href="article1.html">
+                                    <span class="absolute inset-0"></span>
+                                    Renewable energy in India.
+                                </a>
+                            </h3><br>
+                            <p class="mt-5 text-sm leading-6  line-clamp-3">Renewable energy has emerged as
+                                one of the most promising sectors in India, with the country setting ambitious
+                                targets to increase its renewable energy capacity. India's energy mix is currently
+                                dominated by coal, which has
+                                led to high levels of pollution and contributed to climate change. The
+                                government's....</p>
+                        </div>
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                                <p class="font-semibold ">
+                                    <a href="about.html">
+                                        <span class="absolute inset-0"></span>
+                                        Manpreet Kaur
+                                    </a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="flex max-w-xl flex-col items-start ">
+                        <div class="flex items-center gap-x-4 text-xs">
+                        </div>
+                        <div class="group relative">
+                            <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                                <a href="article2.html">
+                                    <span class="absolute inset-0"></span>
+                                    The Importance of Financial Literacy for Young Adults
+                                </a>
+                            </h3>
+                            <p class="mt-5 text-sm leading-6  line-clamp-3">Financial literacy is an
+                                essential life skill that is often overlooked in our education system. Being
+                                financially literate means having the knowledge and skills to make informed decisions
+                                about your personal
+                                finances, such as budgeting, investing, and managing debt. It's a critical skill that
+                                can help individuals....
+                            </p>
+                        </div>
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                                <p class="font-semibold ">
+                                    <a href="about.html">
+                                        <span class="absolute inset-0"></span>
+                                        Manpreet Kaur
+                                    </a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="flex max-w-xl flex-col items-start ">
+                        <div class="flex items-center gap-x-4 text-xs">
+                        </div>
+                        <div class="group relative">
+                            <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                                <a href="article3.html">
+                                    <span class="absolute inset-0"></span>
+                                    Mental health in today's life in India
+                                </a>
+                            </h3>
+                            <p class="mt-5 text-sm leading-6  line-clamp-3">Hey there! Mental health is a
+                                topic that affects us all, and that's especially true in India. With its bustling
+                                cities, high-stress work environments, and cultural taboos surrounding mental health....
+                            </p>
+                        </div>
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                                <p class="font-semibold ">
+                                    <a href="about.html">
+                                        <span class="absolute inset-0"></span>
+                                        Manpreet Kaur
+                                    </a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+            <div
+                class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-0 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+
+                <article class="flex max-w-xl flex-col items-start ">
+                    <div class="flex items-center gap-x-4 text-xs">
+                    </div>
+                    <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                            <a href="article4.html">
+                                <span class="absolute inset-0"></span>
+                                The Future of Artificial Intelligence and Its Implications
+                            </a>
+                        </h3>
+                        <p class="mt-5 text-sm leading-6  line-clamp-3">Artificial Intelligence (AI) is
+                            transforming the way we live and work, and has the potential to revolutionize a wide range
+                            of industries. From virtual assistants like Siri and Alexa to self-driving cars....</p>
+                    </div>
+                    <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                        <div class="text-sm leading-6">
+                            <p class="font-semibold ">
+                                <a href="about.html">
+                                    <span class="absolute inset-0"></span>
+                                    Manpreet Kaur
+                                </a>
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flex max-w-xl flex-col items-start ">
+                    <div class="flex items-center gap-x-4 text-xs">
+                    </div>
+                    <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                            <a href="article5.html">
+                                <span class="absolute inset-0"></span>
+                                The Rise of Remote Work and Its Impact on the Workplace
+                            </a>
+                        </h3>
+                        <p class="mt-5 text-sm leading-6  line-clamp-3">Illo sint voluptas. Error
+                            voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus
+                            unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
+                    </div>
+                    <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                        <div class="text-sm leading-6">
+                            <p class="font-semibold ">
+                                <a href="about.html">
+                                    <span class="absolute inset-0"></span>
+                                    Manpreet Kaur
+                                </a>
+                            </p>
+
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex max-w-xl flex-col items-start ">
+                    <div class="flex items-center gap-x-4 text-xs">
+                    </div>
+                    <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                            <a href="article6.html">
+                                <span class="absolute inset-0"></span>
+                                The History and Evolution of Hip Hop Music
+                            </a>
+                        </h3>
+                        <p class="mt-5 text-sm leading-6  line-clamp-3">Hip hop is a cultural movement that has been
+                            evolving since the 1970s, when it originated in the Bronx, New York City. At its core, hip hop is about self-expression and creativity, and has become a global phenomenon that has influenced people all over the world. Hip hop music, in.....</p>
+                    </div>
+                    <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                        <div class="text-sm leading-6">
+                            <p class="font-semibold ">
+                                <a href="about.html">
+                                    <span class="absolute inset-0"></span>
+                                    Manpreet Kaur
+                                </a>
+                            </p>
+
+                        </div>
+                    </div>
+                </article>
+
+                <div class="flex flex-wrap ">
+                    <div
+                        class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 border-t border-gray-200 pt-0 sm:mt-16 sm:pt-0 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                
+                        <article class="flex max-w-xl flex-col items-start ">
+                            <div class="flex items-center gap-x-4 text-xs">
+                            </div>
+                            <div class="group relative">
+                                <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                                    <a href="article1.html">
+                                        <span class="absolute inset-0"></span>
+                                        ARTICLE NAME
+                                    </a>
+                                </h3>
+                                <p class="mt-5 text-sm leading-6  line-clamp-3">CONTENT</p>
+                            </div>
+                            <div class="relative mt-8 flex items-center gap-x-4">
+                                <img src="profilePhoto.jpg" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                                <div class="text-sm leading-6">
+                                    <p class="font-semibold ">
+                                        <a href="about.html">
+                                            <span class="absolute inset-0"></span>
+                                            Author's Name
+                                        </a>
+                                    </p>
+                
+                                </div>
+                            </div>
+                        </article>
+                        <article class="flex max-w-xl flex-col items-start ">
+                            <div class="flex items-center gap-x-4 text-xs">
+                            </div>
+                            <div class="group relative">
+                                <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                                    <a href="article2.html">
+                                        <span class="absolute inset-0"></span>
+                                        ARTICLE NAME
+                                    </a>
+                                </h3>
+                                <p class="mt-5 text-sm leading-6  line-clamp-3">CONTENT
+                                </p>
+                            </div>
+                            <div class="relative mt-8 flex items-center gap-x-4">
+                                <img src="profilePhoto.jpg" alt="" class="h-10 w-8 rounded-full bg-gray-50">
+                                <div class="text-sm leading-6">
+                                    <p class="font-semibold ">
+                                        <a href="about.html">
+                                            <span class="absolute inset-0"></span>
+                                            Author's Name
+                                        </a>
+                                    </p>
+                
+                                </div>
+                            </div>
+                        </article>
+                        <article class="flex max-w-xl flex-col items-start ">
+                            <div class="flex items-center gap-x-4 text-xs">
+                            </div>
+                            <div class="group relative">
+                                <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:">
+                                    <a href="article.html">
+                                        <span class="absolute inset-0"></span>
+                                        ARTICLE NAME
+                                    </a>
+                                </h3>
+                                <p class="mt-5 text-sm leading-6  line-clamp-3">CONTENT
+                                </p>
+                            </div>
+                            <div class="relative mt-8 flex items-center gap-x-4">
+                                <img src="profilePhoto.jpg" alt="" class="h-10 w-8 rounded-full bg-gray-50">
+                                <div class="text-sm leading-6">
+                                    <p class="font-semibold ">
+                                        <a href="about.html">
+                                            <span class="absolute inset-0"></span>
+                                            Author's Name
+                                        </a>
+                                    </p>
+                
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <!-- More posts...  -->
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+<script>
+    const darkModeToggle = document.querySelector("#dark-mode-toggle");
+    const elementsToToggle = document.querySelectorAll(".dark-mode-toggleable");
+
+    darkModeToggle.addEventListener("click", () => {
+        if (document.body.classList.contains("dark-mode")) {
+            document.body.classList.remove("dark-mode");
+            elementsToToggle.forEach(element => element.classList.remove("dark-mode"));
+        } else {
+            document.body.classList.add("dark-mode");
+            elementsToToggle.forEach(element => element.classList.add("dark-mode"));
+        }
+
+        const toggleSwitch = document.querySelector('.toggle-input');
+        const toggleIcon = document.querySelector('.toggle-icon');
+
+        toggleSwitch.addEventListener('change', function () {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggleIcon.classList.add('dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                toggleIcon.classList.remove('dark');
+            }
+        });
+
+
+    });
+
+</script>
+
+</html>

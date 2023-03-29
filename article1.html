@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Article Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="back-button">&#8592;</a>
+    <div class="dark-mode-switch">
+      <input type="checkbox" id="dark-mode-toggle" class="toggle-input">
+      <label for="dark-mode-toggle" class="toggle-label"></label>
+    </div>
+  </header>
+  <main class="article-container">
+    <article >
+      <h1>Article name</h1>
+      <img src="windmill.jpg" alt="renewable energy">
+      <p></p>
+      CONTENT
+        <b> <p class="ending">
+            ENDING
+          </p></b>
+    </article>
+  </main>
+  
+    <!-- dark mode button script -->
+    <script>
+      const darkModeToggle = document.querySelector("#dark-mode-toggle");
+      const elementsToToggle = document.querySelectorAll(".dark-mode-toggleable");
+  
+      darkModeToggle.addEventListener("click", () => {
+        if (document.body.classList.contains("dark-mode")) {
+          document.body.classList.remove("dark-mode");
+          elementsToToggle.forEach(element => element.classList.remove("dark-mode"));
+        } else {
+          document.body.classList.add("dark-mode");
+          elementsToToggle.forEach(element => element.classList.add("dark-mode"));
+        }
+  
+        const toggleSwitch = document.querySelector('.toggle-input');
+        const toggleIcon = document.querySelector('.toggle-icon');
+  
+        toggleSwitch.addEventListener('change', function () {
+          if (this.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleIcon.classList.add('dark');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+            toggleIcon.classList.remove('dark');
+          }
+        });
+  
+  
+      });
+  
+    </script>
+</body>
+
+</html>
